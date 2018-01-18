@@ -1,0 +1,30 @@
+= form_for @konnec_register do |f|
+  - if @konnec_register.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@konnec_register.errors.count, "error")} prohibited this konnec_register from being saved:"
+      ul
+        - @konnec_register.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :university
+    = f.select :university, KonnecRegister.universities.keys.to_a
+  .field
+    = f.label :year
+    = f.number_field :year
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+  .field
+    = f.label :nickname
+    = f.text_field :nickname
+  .field
+    = f.label :allergy
+    = f.text_area :allergy
+  .field
+    = f.label :size
+    = f.select :size, KonnecRegister.sizes.keys.to_a
+  .actions = f.submit

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :konnec_registers
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -55,4 +57,5 @@ Rails.application.routes.draw do
   #   end
 
   root 'index#index'
+  resources :konnec_registers
 end

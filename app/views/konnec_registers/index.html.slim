@@ -1,0 +1,33 @@
+h1 Listing konnec_registers
+
+table
+  thead
+    tr
+      th University
+      th Year
+      th First name
+      th Last name
+      th Nickname
+      th Allergy
+      th Size
+      th
+      th
+      th
+
+  tbody
+    - @konnec_registers.each do |konnec_register|
+      tr
+        td = konnec_register.university
+        td = konnec_register.year
+        td = konnec_register.first_name
+        td = konnec_register.last_name
+        td = konnec_register.nickname
+        td = konnec_register.allergy
+        td = konnec_register.size
+        td = link_to 'Show', konnec_register
+        td = link_to 'Edit', edit_konnec_register_path(konnec_register)
+        td = link_to 'Destroy', konnec_register, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Konnec register', new_konnec_register_path

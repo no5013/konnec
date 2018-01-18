@@ -1,0 +1,27 @@
+p#notice = notice
+
+p
+  strong University:
+  = @konnec_register.university
+p
+  strong Year:
+  = @konnec_register.year
+p
+  strong First name:
+  = @konnec_register.first_name
+p
+  strong Last name:
+  = @konnec_register.last_name
+p
+  strong Nickname:
+  = @konnec_register.nickname
+p
+  strong Allergy:
+  = @konnec_register.allergy
+p
+  strong Size:
+  = @konnec_register.size
+
+=> link_to 'Edit', edit_konnec_register_path(@konnec_register)
+'|
+=< link_to 'Back', konnec_registers_path
