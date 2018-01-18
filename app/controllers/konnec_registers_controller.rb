@@ -1,6 +1,8 @@
 class KonnecRegistersController < ApplicationController
   before_action :set_konnec_register, only: [:show, :edit, :update, :destroy]
 
+  http_basic_authenticate_with name: ENV["konnec_username"], password: ENV["konnec_password"], except: :create
+
   # GET /konnec_registers
   # GET /konnec_registers.json
   def index
