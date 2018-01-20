@@ -13,7 +13,7 @@
   .form-group
     = f.label :year, :class => "col-sm-3 regis-label" 
     .col-sm-9
-      = f.number_field :year, :class => "form-control" 
+      = f.select :year, KonnecRegister.years.keys.to_a, {}, {:class => 'form-control'}
   .form-group
     = f.label :first_name, :class => "col-sm-3 regis-label" 
     .col-sm-9

@@ -1,4 +1,5 @@
 class KonnecRegister < ActiveRecord::Base
 	enum university: { "Kasetsart University": 0, "Chulalongkorn University": 1 }
-	enum size: { s: 0, m: 1, l: 2, xl: 3, "xxl":4, "3xl": 5, "4xl": 6 }
+	enum year: { "1": 1, "2": 2, "3": 3, "4": 4, "other": 0}
+	enum size: { xs: 0, s: 1, m: 2, l: 3, xl: 4, "xxl":5, "3xl": 6, "4xl": 7 }
 end
