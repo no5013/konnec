@@ -35,7 +35,7 @@ class KonnecRegistersController < ApplicationController
         format.json { render :show, status: :created, location: @konnec_register }
       else
         format.html { render :new }
-        format.js
+        format.js { render layout: false, content_type: 'text/javascript' }
         format.json { render json: @konnec_register.errors, status: :unprocessable_entity }
       end
     end

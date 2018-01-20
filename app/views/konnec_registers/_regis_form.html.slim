@@ -6,6 +6,9 @@
         - @konnec_register.errors.full_messages.each do |message|
           li = message
 
+  .regis-errors style="display: none;"
+    .alert.alert-danger role="alert"
+
   .form-group
     = f.label :university, :class => "col-sm-3 regis-label" 
     .col-sm-9
