@@ -1,5 +1,8 @@
 script [async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABHRh-zSnW-FVaS8UJz6Zxt5kgmvDeKX8&callback=initMap"]
 
+meta name="viewport" content="width=device-width, initial-scale=1"
+
+
 nav.navbar.navbar-default.navbar-fixed-top.navbar-parallax style="border: none"
 	.container-fluid
 		.navbar-header
@@ -7,8 +10,8 @@ nav.navbar.navbar-default.navbar-fixed-top.navbar-parallax style="border: none"
 				span.icon-bar
 				span.icon-bar
 				span.icon-bar
-			a.navbar-brand style="letter-spacing: 0.15em" href="#hero" KONNEC #8
-		.collapse.navbar-collapse#myNavbar
+			a.navbar-brand style="letter-spacing: 0.15em;" href="#hero" KONNEC #8
+		.collapse.navbar-collapse#myNavbar style="overflow: hidden;"
 			ul.nav.navbar-nav.navbar-right
 				li
 					a style="color: #FFFFFF" href="#activities" ACTIVITIES
@@ -21,8 +24,11 @@ nav.navbar.navbar-default.navbar-fixed-top.navbar-parallax style="border: none"
 section#hero
 	.landing data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -200px;" data-anchor-target="#hero" style="height: 100vh;"
 		.caption
-			.typewriter.border
+			.typewriter.border style="margin-bottom: 30px;"
 				h1 KONNEC #8
+			br
+			a.regis-btn.-btn-grey href="#register" style="color: white; margin-top: 30px;"
+				| JOIN US
 
 section#activities
 	.landing style="background-color: #383838;" 
@@ -36,7 +42,7 @@ section#activities
 
 					.seperator
 					a.regis-btn.-btn-grey.-white-border href="#register" style="color: white"
-						| Join 
+						| JOIN US
 
 / .landing#hero style="height: 100vh;"
 / 	.container
@@ -69,15 +75,8 @@ section#register
 				.col-md-6.col-md-offset-3
 					= render 'konnec_registers/regis_form'
 
-/ section.homeSlide#slide-1 style="height: 100%;"
-/ 	.bcg data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1"
-/ 		.hsContainer
-/ 			.hsContent data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2"
-/ 				h2 
-/ 					| Fade out elements before 
-/ 					br
-/ 					| they leave viewport
-
+footer style="background-color: black; color: white; padding: 20px; 0; text-align: center"
+	| This is footer
 
 javascript:
 	var s = skrollr.init({
@@ -100,7 +99,15 @@ javascript:
 		        $('nav').css('background-color', 'rgba(255, 255, 255, 0)')
         		$('.navbar a').css('color','#FFF')
         	}
-        }
+        },
+        forceHeight: false,
+    	mobileCheck: function(){
+	        if((/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+	            //alert('mobile');
+	            // setScrollTop(0);
+	            //Where should I set setScrollTop(0); ???
+	        }
+    	}
 	});
 
 	skrollr.menu.init(s, {
@@ -152,5 +159,7 @@ javascript:
 	}
 
 	$('.nav a').on('click', function(){
-	    $('.navbar-toggle').click()
+		if($('.navbar-toggle').is(":visible")){
+			$('.navbar-toggle').click()
+		}
 	});

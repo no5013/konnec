@@ -45,7 +45,7 @@
 }
 
 .seperator {
-	border-bottom:1px solid #FFF;
+	border-bottom:1px solid #383838;
 	margin: 30px 0;
 }
 
@@ -114,5 +114,23 @@
 		-webkit-transition:color .5s;
 		-moz-transition:color .5s;
 		transition:color .5s;
+	}
+}
+
+.only-mobile {
+	display: none;
+}
+
+.only-desktop {
+	display: inline-block;
+}
+
+@media (max-width: 600px) {
+	.only-mobile {
+		display: inline-block;
+	}
+
+	.only-desktop {
+		display: none;
 	}
 }
