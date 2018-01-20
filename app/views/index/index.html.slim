@@ -1,12 +1,20 @@
 script [async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABHRh-zSnW-FVaS8UJz6Zxt5kgmvDeKX8&callback=initMap"]
 
-/ nav.navbar.navbar-default.navbar-fixed-top
-/ 	.container-fluid
-/ 		.navbar-header
-/ 			.navbar-brand Konnec
+nav.navbar.navbar-default.navbar-fixed-top.navbar-parallax style="border: none"
+	.container-fluid
+		.navbar-header
+			a.navbar-brand style="letter-spacing: 0.15em" href="#hero" KONNEC #8
+		ul.nav.navbar-nav.navbar-right
+			li
+				a style="color: #FFFFFF" href="#activities" ACTIVITIES
+			li
+				a style="color: #FFFFFF" href="#location" LOCATION
+			li
+				a style="color: #FFFFFF" href="#register" REGISTER
 
-section style="height: 100vh;"
-	.landing#hero data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -200px;" data-anchor-target="#hero"
+
+section#hero
+	.landing data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -200px;" data-anchor-target="#hero" style="height: 100vh;"
 		.caption
 			.typewriter.border
 				h1 KONNEC #8
@@ -22,7 +30,8 @@ section#activities
 						| ConneK (Connections of CU and KU Computer Engineering Students) เป็นโครงการสานสัมพันธ์ของนิสิตวิศวกรรมคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย – มหาวิทยาลัยเกษตรศาสตร์ ที่เปิดโอกาสให้นิสิตของทั้งสองมหาวิทยาลัยได้มาทำความรู้จักกัน ผ่านการทำกิจกรรมและการแข่งขันกีฬาร่วมกัน KonneC (เมื่อมหาวิทยาลัยเกษตรศาสตร์เป็นเจ้าภาพ) หรือ ConneK (เมื่อจุฬาลงกรณ์มหาวิทยาลัยเป็นเจ้าภาพ) จัดขึ้นครั้งแรกเมื่อปี พ.ศ.2553 โดยในครั้งแรก จุฬาลงกรณ์มหาวิทยาลัย เป็นเจ้าภาพจัดโครงการ ตั้งแต่ครั้งนั้น ทั้งสอง มหาวิทยาลัยก็สลับกันเป็นเจ้าภาพมาโดยตลอด
 
 					.seperator
-					button.regis-btn.-btn-grey.-white-border = "Join"
+					a.regis-btn.-btn-grey.-white-border href="#register" style="color: white"
+						| Join 
 
 / .landing#hero style="height: 100vh;"
 / 	.container
@@ -69,7 +78,60 @@ javascript:
 	var s = skrollr.init({
         smoothScrolling: true,
         smoothScrollingDuration: 1000,
-        edgeStrategy: 'ease'
+        edgeStrategy: 'ease',
+        render: function (scrolling) {
+
+        },
+        beforerender: function(scrolling){
+	        if($('#activities').position().top <= scrolling.curTop + $('nav').height() && $('#activities').position().top + $('#activities').height() >= scrolling.curTop){
+        		$('nav').css('background-color', 'rgba(255, 255, 255, 0.5)')
+        		$('.navbar a').css('color','#454550')
+        	}
+        	else if($('#register').position().top <= scrolling.curTop + $('nav').height() && $('#register').position().top + $('#register').height() >= scrolling.curTop){
+        		$('nav').css('background-color', 'rgba(255, 255, 255, 0.5)')
+        		$('.navbar a').css('color','#454550')
+        	}
+        	else {
+		        $('nav').css('background-color', 'rgba(255, 255, 255, 0)')
+        		$('.navbar a').css('color','#FFF')
+        	}
+        }
+	});
+
+	skrollr.menu.init(s, {
+		//skrollr will smoothly animate to the new position using `animateTo`.
+		animate: true,
+
+		//The easing function to use.
+		easing: 'sqrt',
+
+		//Multiply your data-[offset] values so they match those set in skrollr.init
+		scale: 2,
+
+		//How long the animation should take in ms.
+		duration: function(currentTop, targetTop) {
+			//By default, the duration is hardcoded at 500ms.
+			return 500;
+
+			//But you could calculate a value based on the current scroll position (`currentTop`) and the target scroll position (`targetTop`).
+			//return Math.abs(currentTop - targetTop) * 10;
+		},
+
+		//By default skrollr-menu will only react to links whose href attribute contains a hash and nothing more, e.g. `href="#foo"`.
+		//If you enable `complexLinks`, skrollr-menu also reacts to absolute and relative URLs which have a hash part.
+		//The following will all work (if the user is on the correct page):
+		//http://example.com/currentPage/#foo
+		//http://example.com/currentDir/currentPage.html?foo=bar#foo
+		///?foo=bar#foo
+		complexLinks: true,
+
+		//This event is triggered right before we jump/animate to a new hash.
+		change: function(newHash, newTopPosition) {
+			//Do stuff
+		},
+
+		//Add hash link (e.g. `#foo`) to URL or not.
+		updateUrl: false //defaults to `true`.
 	});
 
 	function initMap() {

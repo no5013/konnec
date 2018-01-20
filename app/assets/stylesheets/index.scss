@@ -31,7 +31,7 @@
 	}
 }
 
-#hero {
+#hero .landing {
 	background-image: url(/assets/detective.jpg);
 }
 
@@ -103,32 +103,16 @@
   50% { border-color: orange; }
 }
 
-/* CSS */
-.hsContainer {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-    opacity: 0;
+.navbar-parallax {
+	background-color:rgba(255, 255, 255, 0); 
+	font-weight: bold;
+	-webkit-transition:background-color .5s;
+	-moz-transition:background-color .5s;
+	transition:background-color .5s;
+
+	a {
+		-webkit-transition:color .5s;
+		-moz-transition:color .5s;
+		transition:color .5s;
+	}
 }
-.hsContent {
-    max-width: 450px;
-    margin: -150px auto 0 auto;
-    display: table-cell;
-    vertical-align: middle;
-    color: #ebebeb;
-    padding: 0 8%;
-    text-align: center
-}
-.bcg {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-}
-/* Slide 1 */
-#slide-1 .bcg {background-image:url(/assets/detective.jpg)}
