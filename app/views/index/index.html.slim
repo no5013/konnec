@@ -3,14 +3,19 @@ script [async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABHRh
 nav.navbar.navbar-default.navbar-fixed-top.navbar-parallax style="border: none"
 	.container-fluid
 		.navbar-header
+			button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" 
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
 			a.navbar-brand style="letter-spacing: 0.15em" href="#hero" KONNEC #8
-		ul.nav.navbar-nav.navbar-right
-			li
-				a style="color: #FFFFFF" href="#activities" ACTIVITIES
-			li
-				a style="color: #FFFFFF" href="#location" LOCATION
-			li
-				a style="color: #FFFFFF" href="#register" REGISTER
+		.collapse.navbar-collapse#myNavbar
+			ul.nav.navbar-nav.navbar-right
+				li
+					a style="color: #FFFFFF" href="#activities" ACTIVITIES
+				li
+					a style="color: #FFFFFF" href="#location" LOCATION
+				li
+					a style="color: #FFFFFF" href="#register" REGISTER
 
 
 section#hero
@@ -23,11 +28,11 @@ section#activities
 	.landing style="background-color: #383838;" 
 		.container
 			.topic data--200-bottom="opacity: 0" data-center="opacity: 1" data-300-top="opacity: 1" data-anchor-target="#activities .topic"
-				| What is ConneK?
+				| What is KonneC?
 			.row data--200-bottom="opacity: 0" data-center="opacity: 1" data-300-top="opacity: 1" data-anchor-target="#activities .topic"
 				.col-md-7
 					div style="color: white"
-						| ConneK (Connections of CU and KU Computer Engineering Students) เป็นโครงการสานสัมพันธ์ของนิสิตวิศวกรรมคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย – มหาวิทยาลัยเกษตรศาสตร์ ที่เปิดโอกาสให้นิสิตของทั้งสองมหาวิทยาลัยได้มาทำความรู้จักกัน ผ่านการทำกิจกรรมและการแข่งขันกีฬาร่วมกัน KonneC (เมื่อมหาวิทยาลัยเกษตรศาสตร์เป็นเจ้าภาพ) หรือ ConneK (เมื่อจุฬาลงกรณ์มหาวิทยาลัยเป็นเจ้าภาพ) จัดขึ้นครั้งแรกเมื่อปี พ.ศ.2553 โดยในครั้งแรก จุฬาลงกรณ์มหาวิทยาลัย เป็นเจ้าภาพจัดโครงการ ตั้งแต่ครั้งนั้น ทั้งสอง มหาวิทยาลัยก็สลับกันเป็นเจ้าภาพมาโดยตลอด
+						| KonneC (Connections of CU and KU Computer Engineering Students) เป็นโครงการสานสัมพันธ์ของนิสิตวิศวกรรมคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย – มหาวิทยาลัยเกษตรศาสตร์ ที่เปิดโอกาสให้นิสิตของทั้งสองมหาวิทยาลัยได้มาทำความรู้จักกัน ผ่านการทำกิจกรรมและการแข่งขันกีฬาร่วมกัน KonneC (เมื่อมหาวิทยาลัยเกษตรศาสตร์เป็นเจ้าภาพ) หรือ ConneK (เมื่อจุฬาลงกรณ์มหาวิทยาลัยเป็นเจ้าภาพ) จัดขึ้นครั้งแรกเมื่อปี พ.ศ.2553 โดยในครั้งแรก จุฬาลงกรณ์มหาวิทยาลัย เป็นเจ้าภาพจัดโครงการ ตั้งแต่ครั้งนั้น ทั้งสอง มหาวิทยาลัยก็สลับกันเป็นเจ้าภาพมาโดยตลอด
 
 					.seperator
 					a.regis-btn.-btn-grey.-white-border href="#register" style="color: white"
@@ -145,3 +150,7 @@ javascript:
 	      map: map
 	    });
 	}
+
+	$('.nav a').on('click', function(){
+	    $('.navbar-toggle').click()
+	});
