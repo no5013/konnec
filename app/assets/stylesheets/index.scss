@@ -40,6 +40,10 @@
 	background-image: url(/assets/detective.jpg);
 }
 
+#activities .landing {
+	// background-image: url(/assets/detective.jpg);
+}
+
 .border {
 	background-color: #111;
 	padding: 18px;
@@ -138,4 +142,9 @@
 
 section {
 	overflow: hidden
+}
+
+.success-regis {
+	font-size: 32px;
+	text-align: center;
 }

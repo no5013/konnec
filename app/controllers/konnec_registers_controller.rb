@@ -31,9 +31,11 @@ class KonnecRegistersController < ApplicationController
     respond_to do |format|
       if @konnec_register.save
         format.html { redirect_to @konnec_register, notice: 'Konnec register was successfully created.' }
+        format.js
         format.json { render :show, status: :created, location: @konnec_register }
       else
         format.html { render :new }
+        format.js
         format.json { render json: @konnec_register.errors, status: :unprocessable_entity }
       end
     end
