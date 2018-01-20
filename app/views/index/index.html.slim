@@ -11,13 +11,15 @@ section style="height: 100vh;"
 			.typewriter.border
 				h1 KONNEC #8
 
-section
-	.landing style="background-color: #383838;"
+section#activities
+	.landing style="background-color: #383838;" 
 		.container
-			.topic ACTIVITIES
-			.row
+			.topic data--200-bottom="opacity: 0" data-center="opacity: 1" data-300-top="opacity: 1" data-anchor-target="#activities .topic"
+				| What is ConneK?
+			.row data--200-bottom="opacity: 0" data-center="opacity: 1" data-300-top="opacity: 1" data-anchor-target="#activities .topic"
 				.col-md-7
-					div style="color: white" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent congue commodo mauris vel vestibulum. In vitae congue magna. Donec tincidunt purus neque, id finibus velit viverra ac. Aliquam dapibus scelerisque quam, vel porta risus ornare at. Suspendisse venenatis nunc porttitor tellus vulputate elementum. Maecenas sed leo nec velit malesuada vulputate non placerat dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer sit amet urna commodo, rhoncus sem ullamcorper, accumsan enim. Mauris vitae dolor eu dui gravida ornare. Nullam at libero nec turpis sollicitudin lobortis porta efficitur ligula. Sed mattis mi vitae sodales maximus. "
+					div style="color: white"
+						| ConneK (Connections of CU and KU Computer Engineering Students) เป็นโครงการสานสัมพันธ์ของนิสิตวิศวกรรมคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย – มหาวิทยาลัยเกษตรศาสตร์ ที่เปิดโอกาสให้นิสิตของทั้งสองมหาวิทยาลัยได้มาทำความรู้จักกัน ผ่านการทำกิจกรรมและการแข่งขันกีฬาร่วมกัน KonneC (เมื่อมหาวิทยาลัยเกษตรศาสตร์เป็นเจ้าภาพ) หรือ ConneK (เมื่อจุฬาลงกรณ์มหาวิทยาลัยเป็นเจ้าภาพ) จัดขึ้นครั้งแรกเมื่อปี พ.ศ.2553 โดยในครั้งแรก จุฬาลงกรณ์มหาวิทยาลัย เป็นเจ้าภาพจัดโครงการ ตั้งแต่ครั้งนั้น ทั้งสอง มหาวิทยาลัยก็สลับกันเป็นเจ้าภาพมาโดยตลอด
 
 					.seperator
 					button.regis-btn.-btn-grey.-white-border = "Join"
@@ -28,22 +30,28 @@ section
 / 			.col-md-3
 / 				.topic SPONSOR
 
-section
+section#location
 	.landing style="background-color: #920A0A;"
 		.container style="height: 100%;"
-			.topic LOCATION
-			.row
-				.col-md-6
+			.topic data--200-bottom="opacity: 0" data-center="opacity: 1" data-300-top="opacity: 1" data-anchor-target="#location .topic"
+				| LOCATION
+			.row 
+				.col-md-6 data--200-bottom="opacity: 0; transform:scale(0);" data-center="opacity: 1; transform:scale(1);" data-300-top="opacity: 1; transform:scale(1);" data-anchor-target="#location .topic" data-smooth-scrolling="on"
 					#map style="height: 400px; width: 100%;"
 				.col-md-6
+					div style="color: white; font-size: 24px;" data--200-bottom="opacity: 0" data-center="opacity: 1" data-300-top="opacity: 1" data-anchor-target="#location .topic"
+						| Building 15 (Computer Engineering Building) 
+						br 
+						| Faculty of Engineering 
+						br
+						| Kasetsart University
 
-section
+
+section#register
 	.landing
 		.container
-			.row
-				.col-md-3
-					.topic style="color: #383838" REGISTER
-			.row
+			.topic style="color: #383838" data--200-bottom="opacity: 0" data-center="opacity: 1" data-300-top="opacity: 1" data-anchor-target="#register .topic" REGISTER
+			.row data--200-bottom="opacity: 0" data-center="opacity: 1" data-300-top="opacity: 1" data-anchor-target="#register .topic"
 				.col-md-6.col-md-offset-3
 					= render 'konnec_registers/regis_form'
 
@@ -58,16 +66,20 @@ section
 
 
 javascript:
-	var s = skrollr.init();
+	var s = skrollr.init({
+        smoothScrolling: true,
+        smoothScrollingDuration: 1000,
+        edgeStrategy: 'ease'
+	});
 
 	function initMap() {
-	    var uluru = {lat: -25.363, lng: 131.044};
+	    var ku = {lat: 13.846292, lng: 100.568663};
 	    var map = new google.maps.Map(document.getElementById('map'), {
-	      zoom: 4,
-	      center: uluru
+	      zoom: 16,
+	      center: ku
 	    });
 	    var marker = new google.maps.Marker({
-	      position: uluru,
+	      position: ku,
 	      map: map
 	    });
 	}

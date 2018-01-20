@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .landing {
-	height: 100%;
+	min-height: 100vh;
 	padding: 5%;
 	box-sizing: border-box;
     background-position: center center;
@@ -32,6 +32,10 @@
 }
 
 #hero {
+	background-image: url(/assets/detective.jpg);
+}
+
+#hero-2 {
 	background-image: url(/assets/detective.jpg);
 }
 
