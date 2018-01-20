@@ -33,15 +33,15 @@ section#hero
 section#activities
 	.landing style="background-color: #383838;" 
 		.container
-			.topic data--200-bottom="opacity: 0" data-center="opacity: 1" data-300-top="opacity: 1" data-anchor-target="#activities .topic"
+			.topic data-bottom-top="opacity: 0;top: 50px;" data-center="opacity: 1;top: 0px;" data-anchor-target="#activities .topic"
 				| What is KonneC?
-			.row data--200-bottom="opacity: 0" data-center="opacity: 1" data-300-top="opacity: 1" data-anchor-target="#activities .topic"
-				.col-md-7
-					div style="color: white"
+			.row style="position: relative" data-bottom-top="opacity: 0;top: 50px;" data-center="opacity: 1;top: 0px;" data-anchor-target="#activities .row"
+				.col-md-7 
+					div style="color: white" 
 						| KonneC (Connections of CU and KU Computer Engineering Students) เป็นโครงการสานสัมพันธ์ของนิสิตวิศวกรรมคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย – มหาวิทยาลัยเกษตรศาสตร์ ที่เปิดโอกาสให้นิสิตของทั้งสองมหาวิทยาลัยได้มาทำความรู้จักกัน ผ่านการทำกิจกรรมและการแข่งขันกีฬาร่วมกัน KonneC (เมื่อมหาวิทยาลัยเกษตรศาสตร์เป็นเจ้าภาพ) หรือ ConneK (เมื่อจุฬาลงกรณ์มหาวิทยาลัยเป็นเจ้าภาพ) จัดขึ้นครั้งแรกเมื่อปี พ.ศ.2553 โดยในครั้งแรก จุฬาลงกรณ์มหาวิทยาลัย เป็นเจ้าภาพจัดโครงการ ตั้งแต่ครั้งนั้น ทั้งสอง มหาวิทยาลัยก็สลับกันเป็นเจ้าภาพมาโดยตลอด
 
 					.seperator
-					a.regis-btn.-btn-grey.-white-border href="#register" style="color: white"
+					a.regis-btn.-btn-grey.-white-border href="#register" style="color: white" 
 						| JOIN US
 
 / .landing#hero style="height: 100vh;"
@@ -53,13 +53,13 @@ section#activities
 section#location
 	.landing style="background-color: #920A0A;"
 		.container style="height: 100%;"
-			.topic data--200-bottom="opacity: 0" data-center="opacity: 1" data-300-top="opacity: 1" data-anchor-target="#location .topic"
+			.topic data-bottom-top="opacity: 0" data-center="opacity: 1" data-anchor-target="#location .topic"
 				| LOCATION
 			.row 
-				.col-md-6 data--200-bottom="opacity: 0; transform:scale(0);" data-center="opacity: 1; transform:scale(1);" data-300-top="opacity: 1; transform:scale(1);" data-anchor-target="#location .topic" data-smooth-scrolling="on"
-					#map style="height: 400px; width: 100%;"
-				.col-md-6
-					div style="color: white; font-size: 24px;" data--200-bottom="opacity: 0" data-center="opacity: 1" data-300-top="opacity: 1" data-anchor-target="#location .topic"
+				.col-md-6#map-info data-bottom-top="opacity: 0; transform:scale(0.5);" data-center="opacity: 1; transform:scale(1);"data-anchor-target="#location .topic" data-smooth-scrolling="on"
+					#map style="height: 300px; width: 100%;"
+				.col-md-6#location-info style="overflow-x: hidden"
+					div style="color: white; font-size: 24px; position: relative;" data-bottom-top="opacity: 0;left:100px;" data-center="opacity: 1; left:0px;" data-anchor-target="#location #location-info"
 						| Building 15 (Computer Engineering Building) 
 						br 
 						| Faculty of Engineering 
@@ -70,13 +70,15 @@ section#location
 section#register
 	.landing
 		.container
-			.topic style="color: #383838" data--200-bottom="opacity: 0" data-center="opacity: 1" data-300-top="opacity: 1" data-anchor-target="#register .topic" REGISTER
-			.row data--200-bottom="opacity: 0" data-center="opacity: 1" data-300-top="opacity: 1" data-anchor-target="#register .topic"
+			.topic style="color: #383838" data-bottom-top="opacity: 0;top:-100px;" data-center="opacity: 1;top: 0;"  data-anchor-target="#register .topic" REGISTER
+			.row data-bottom-top="opacity: 0;top:-100px;" data-center="opacity: 1;top: 0;" data-anchor-target="#register .row"
 				.col-md-6.col-md-offset-3
 					= render 'konnec_registers/regis_form'
 
 footer style="background-color: black; color: white; padding: 20px; 0; text-align: center"
-	| This is footer
+	= link_to 'https://www.facebook.com/ConneK/', style: "color: white", target: "_blank"
+		= image_tag 'icons/icon_Facebook.png', style: "width: 32px; margin-right: 5px;"
+		span ConneK
 
 javascript:
 	var s = skrollr.init({
