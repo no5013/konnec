@@ -13,6 +13,7 @@
 
 	.topic {
 		color: white;
+		display: inline-block;
 		font-size: 50px;
 		font-weight: bold;
 		margin-bottom: 20px;
@@ -28,7 +29,9 @@
 	}
 
 	.content {
-		margin: auto;
+		color: white;
+		background-color: #920A0A;
+		padding: 20px;
 	}
 }
 
@@ -76,8 +79,19 @@
 		background-color: #383838;
 	}
 
+	&.-btn-red {
+		background-color: #920A0A;
+	}
+
 	&.-white-border {
 		border: 1px solid #FFFFFF;
+	}
+
+	&.-red-border {
+		border: 1px solid #920A0A;
+	}
+	&.-no-bg {
+		background-color: none;
 	}
 }
 

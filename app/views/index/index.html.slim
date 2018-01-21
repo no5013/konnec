@@ -22,12 +22,12 @@ nav.navbar.navbar-default.navbar-fixed-top.navbar-parallax style="border: none"
 
 
 section#hero
-	.landing data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -200px;" data-anchor-target="#hero" style="height: 100vh; background-image: url(#{image_path 'detective.jpg'});"
+	.landing data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -50%;" data-anchor-target="#hero" style="height: 100vh; background-image: url(#{image_path 'detective.jpg'});"
 		.caption
 			.typewriter.border style="margin-bottom: 30px;"
 				h1 KONNEC #8
 			br
-			a.regis-btn.-btn-grey href="#register" style="color: white; margin-top: 30px;"
+			a.regis-btn.-white-border.-no-bg href="#register" style="color: white; margin-top: 30px;"
 				| JOIN US
 
 section#activities
@@ -51,15 +51,15 @@ section#activities
 / 				.topic SPONSOR
 
 section#location
-	.landing style="background-color: #920A0A;" data-bottom-top="background-color:rgb(0,0,0)" data-center=" background-color: rgb(146,10,10)" data-anchor-target="#location .landing"
+	.landing style="background-color: #920A0A; background-image: url(#{image_path 'ku-building.jpg'});" data-bottom-top="background-color:rgb(0,0,0)" data-center=" background-color: rgb(146,10,10)" data-anchor-target="#location .landing"
 		.container style="height: 100%;"
-			.topic data-bottom-top="opacity: 0" data-center="opacity: 1" data-anchor-target="#location .topic"
+			.topic style="background-color: #920A0A;" data-bottom-top="opacity: 0;background-color:rgb(0,0,0);" data-center="opacity: 1;background-color: rgb(146,10,10);" data-anchor-target="#location .topic"
 				| LOCATION
 			.row 
-				.col-md-6#map-info data-bottom-top="opacity: 0; transform:scale(0.5);" data-center="opacity: 1; transform:scale(1);"data-anchor-target="#location .topic" data-smooth-scrolling="on"
+				.col-md-6#map-info style="margin-bottom: 30px;" data-bottom-top="opacity: 0; transform:scale(0.5);" data-center="opacity: 1; transform:scale(1);"data-anchor-target="#location .topic" data-smooth-scrolling="on"
 					#map style="height: 300px; width: 100%;"
 				.col-md-6#location-info style="overflow-x: hidden"
-					div style="color: white; font-size: 24px; position: relative;" data-bottom-top="opacity: 0;left:100px;" data-center="opacity: 1; left:0px;" data-anchor-target="#location #location-info"
+					.content style="color: white; font-size: 24px; position: relative;" data-bottom-top="opacity: 0;left:100px;background-color:rgb(0,0,0);" data-center="opacity: 1; left:0px;background-color:rgb(146,10,10);" data-anchor-target="#location .topic"
 						| ภาควิชาวิศวกรรมคอมพิวเตอร์ (อาคาร15)
 						br 
 						| คณะวิศวกรรมศาสตร์ 

@@ -10,34 +10,34 @@
     .alert.alert-danger role="alert"
 
   .form-group
-    = f.label :university, :class => "col-sm-3 regis-label" 
-    .col-sm-9
+    = f.label :university, :class => "col-sm-3 col-xs-4 regis-label" 
+    .col-sm-9.col-xs-8
       = f.select :university, KonnecRegister.universities.keys.to_a, {}, {:class => 'form-control'}
   .form-group
-    = f.label :year, :class => "col-sm-3 regis-label" 
-    .col-sm-9
+    = f.label :year, :class => "col-sm-3 col-xs-4 regis-label" 
+    .col-sm-9.col-xs-8
       = f.select :year, KonnecRegister.years.keys.to_a, {}, {:class => 'form-control'}
   .form-group
-    = f.label :first_name, :class => "col-sm-3 regis-label" 
-    .col-sm-9
+    = f.label :first_name, :class => "col-sm-3 col-xs-4 regis-label" 
+    .col-sm-9.col-xs-8
       = f.text_field :first_name, :class => "form-control" 
   .form-group
-    = f.label :last_name, :class => "col-sm-3 regis-label" 
-    .col-sm-9
+    = f.label :last_name, :class => "col-sm-3 col-xs-4 regis-label" 
+    .col-sm-9.col-xs-8
       = f.text_field :last_name, :class => "form-control" 
   .form-group
-    = f.label :nickname, :class => "col-sm-3 regis-label" 
-    .col-sm-9
+    = f.label :nickname, :class => "col-sm-3 col-xs-4 regis-label" 
+    .col-sm-9.col-xs-8
       = f.text_field :nickname, :class => "form-control" 
   .form-group
-    = f.label :allergy, :class => "col-sm-3 regis-label" 
-    .col-sm-9
+    = f.label :allergy, :class => "col-sm-3 col-xs-4 regis-label" 
+    .col-sm-9.col-xs-8
       = f.text_field :allergy, :class => "form-control" 
   .form-group
-    = f.label :size, :class => "col-sm-3 regis-label" 
-    .col-sm-9
+    = f.label :size, :class => "col-sm-3 col-xs-4 regis-label" 
+    .col-sm-9.col-xs-8
       = f.select :size, KonnecRegister.sizes.keys.to_a, {}, {:class => 'form-control'}
 
   .seperator
 
-  .actions style="text-align: center;" = f.submit 'Join', :class => "regis-btn -btn-grey"
+  .actions style="text-align: center;" = f.submit 'Submit', :class => "regis-btn -btn-grey"
