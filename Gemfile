@@ -42,8 +42,6 @@ gem 'sass-rails', '>= 3.2'
 
 gem 'puma'
 
-gem 'pg'
-
 group :development do
   gem 'mysql2', '0.3.18'
   gem 'capistrano'
@@ -54,7 +52,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.18.4'
 end
 
 group :development, :test do
