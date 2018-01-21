@@ -1,10 +1,6 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.10.1"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
-
-
 set :application, 'KonneC8'
 set :repo_url, 'git@github.com:no5013/konnec.git' # Edit this to match your repository
 set :branch, :master
