@@ -1,7 +1,6 @@
-script [async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABHRh-zSnW-FVaS8UJz6Zxt5kgmvDeKX8&callback=initMap"]
-
 meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0"
 
+script [async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABHRh-zSnW-FVaS8UJz6Zxt5kgmvDeKX8"]
 
 nav.navbar.navbar-default.navbar-fixed-top.navbar-parallax style="border: none"
 	.container-fluid
@@ -95,12 +94,6 @@ section#register
 
 javascript:
 	var s = skrollr.init({
-        smoothScrolling: true,
-        smoothScrollingDuration: 1000,
-        edgeStrategy: 'ease',
-        render: function (scrolling) {
-
-        },
         beforerender: function(scrolling){
 	        if($('#activities').position().top <= scrolling.curTop + $('nav').height() && $('#activities').position().top + $('#activities').height() >= scrolling.curTop){
         		$('nav').css('background-color', 'rgba(255, 255, 255, 0.5)')
@@ -172,6 +165,7 @@ javascript:
 	      map: map
 	    });
 	}
+	setTimeout(function(){initMap();},1000);
 
 	$('.nav a').on('click', function(){
 		if($('.navbar-toggle').is(":visible")){
