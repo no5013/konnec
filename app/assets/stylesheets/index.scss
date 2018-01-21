@@ -2,8 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body, html {
+    height: 100%;
+}
+
 .landing {
-	min-height: 100vh;
 	padding: 5%;
 	box-sizing: border-box;
     background-position: center center;
