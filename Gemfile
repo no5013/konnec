@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby "2.2.1"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -45,11 +45,16 @@ gem 'puma'
 gem 'pg'
 
 group :development do
+  gem 'mysql2', '0.3.18'
   gem 'capistrano'
   gem 'capistrano3-puma'
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rvm'
+end
+
+group :production do
+  gem 'pg'
 end
 
 group :development, :test do

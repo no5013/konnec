@@ -103,6 +103,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.1)
     multi_json (1.13.1)
+    mysql2 (0.3.18)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
@@ -212,6 +213,7 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  mysql2 (= 0.3.18)
   pg
   puma
   rails (= 4.2.0)
