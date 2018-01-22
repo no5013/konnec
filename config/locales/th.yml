@@ -22,6 +22,10 @@
 th:
   hello: "Hello world"
   activerecord:
+    errors:
+      models:
+        konnec_register:
+          blank: "ยังไม่ได้กรอก"
     attributes:
       konnec_register:
         university: "มหาวิทยาลัย"
