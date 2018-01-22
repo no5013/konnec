@@ -24,7 +24,7 @@ nav.navbar.navbar-default.navbar-fixed-top.navbar-parallax style="border: none"
 					a style="color: white" href="#register" REGISTER
 
 
-section#hero style="height: 100%; background-color: black;"
+section#hero style="height: 100%; background-color: #383838;"
 	.landing style="height: 100%; background-image: url(#{image_path 'crime_scene.jpg'});" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% 25%;" data-anchor-target="section#hero .landing"
 		.caption
 			.typewriter.border style="margin-bottom: 30px;"
@@ -53,7 +53,7 @@ section#activities style="background-color: #383838;"
 section#schedule
 	.landing
 		.container
-			.topic.-black SCHEDULE
+			.topic.-black data-aos="slide-right" SCHEDULE 
 			.row
 				.col-md-offset-3.col-md-6
 					table.table.schedule-table
@@ -98,6 +98,8 @@ section#schedule
 									| 20:00
 								td.schedule-cell.align-left data-aos="fade-left" data-aos-once="true"
 									| จบงาน KonneC #8
+	div style="position: absolute; bottom: 0; left: 0; z-index: 0; width: 50%; text-align: left;" data-aos="fade" 
+		= image_tag 'objects/blood.jpg'
 
 section#sponsors style="background-image: url(#{image_path 'wood.jpg'});"
 	.landing 
@@ -140,7 +142,7 @@ section#register
 						| ลงทะเบียนเสร็จสิ้น แล้วเจอกันวันงาน
 						br
 						| 10 กุมภาพันธ์ 2018
-	div style="position: absolute; bottom: 0; right: 0; z-index: 0; width: 50%; text-align: right;"
+	div style="position: absolute; bottom: 0; right: 0; z-index: 0; width: 50%; text-align: right;" data-aos="fade" 
 		= image_tag 'objects/fingerprint.png', class: "height: 100%;"
 
 / footer style="background-color: black; color: white; padding: 20px; 0; text-align: center"
@@ -158,6 +160,10 @@ javascript:
         		$('.navbar a').css('color','#454550')
         	}
         	else if($('#register').position().top <= scrolling.curTop + $('nav').height() && $('#register').position().top + $('#register').height() >= scrolling.curTop){
+        		$('nav').css('background-color', 'rgba(255, 255, 255, 0.5)')
+        		$('.navbar a').css('color','#454550')
+        	}
+        	else if($('#schedule').position().top <= scrolling.curTop + $('nav').height() && $('#schedule').position().top + $('#schedule').height() >= scrolling.curTop){
         		$('nav').css('background-color', 'rgba(255, 255, 255, 0.5)')
         		$('.navbar a').css('color','#454550')
         	}
