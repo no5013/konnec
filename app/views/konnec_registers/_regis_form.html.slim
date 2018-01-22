@@ -32,12 +32,12 @@
   .form-group
     = f.label :gender, :class => "col-sm-3 col-xs-4 regis-label" 
     .col-sm-9.col-xs-8
-      = radio_button_tag(:gender, 0)
-      = label :gender_0, 'Male', style: "margin-right: 10px;"
+      = radio_button_tag(:gender, 0, checked: true)
+      = label :gender_0, 'Male', style: "margin-right: 10px; background-color: #FFF; background-color: rgba(255,255,255,0.75)"
       = radio_button_tag(:gender, 1)
-      = label :gender_1, 'Female', style: "margin-right: 10px;"
+      = label :gender_1, 'Female', style: "margin-right: 10px; background-color: #FFF; background-color: rgba(255,255,255,0.75)"
       = radio_button_tag(:gender, 2)
-      = label :gender_2, 'Others', style: "margin-right: 10px;"
+      = label :gender_2, 'Others', style: "margin-right: 10px; background-color: #FFF; background-color: rgba(255,255,255,0.75)"
   .form-group
     = f.label :allergy, :class => "col-sm-3 col-xs-4 regis-label" 
     .col-sm-9.col-xs-8
