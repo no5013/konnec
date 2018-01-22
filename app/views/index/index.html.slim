@@ -98,18 +98,18 @@ section#schedule
 									| 20:00
 								td.schedule-cell.align-left data-aos="fade-left" data-aos-once="true"
 									| จบงาน KonneC #8
-	div style="position: absolute; bottom: 0; left: 0; z-index: 0; width: 50%; text-align: left;" data-aos="fade" 
+	div style="position: absolute; bottom: 0; left: 0; z-index: 0; width: 50%; text-align: left;" data-aos="fade" data-aos-delay="400" data-aos-duration="600"
 		= image_tag 'objects/blood.jpg'
 
 section#sponsors style="background-image: url(#{image_path 'wood.jpg'});"
-	.landing 
+	.landing style="padding-bottom: 0;"
 		.container
 			.topic SPONSORS
 			.row
-				.col-xs-6
+				.col-xs-6 data-aos="fade-up" data-aos-easing="ease-out"
 					= image_tag 'sponsors/sellsuki.png', style: "width: 100%;"
-				.col-xs-6
-					= image_tag 'sponsors/wongnai.jpg', style: "width: 100%;"
+				.col-xs-6 data-aos="fade-up-right" data-aos-easing="ease-out" data-aos-duration="500"
+					= image_tag 'sponsors/wongnai.png', style: "width: 100%;"
 				
 
 
