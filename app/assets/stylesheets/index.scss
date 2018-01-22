@@ -23,6 +23,10 @@ body, html {
 		font-weight: bold;
 		margin-bottom: 20px;
 		position: relative;
+
+		&.-black {
+			color: black;
+		}
 	}
 
 	.caption {
@@ -150,6 +154,20 @@ body, html {
 	display: inline-block;
 }
 
+.schedule-table {
+	td.schedule-cell {
+		font-size: 16px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	td.align-left {
+		text-align: left
+	}
+	td.align-right {
+		text-align: right
+	}
+}
+
 @media (max-width: 600px) {
 	.only-mobile {
 		display: inline-block;
@@ -163,6 +181,10 @@ body, html {
 section {
 	overflow: hidden;
 	position: relative;
+
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .success-regis {

@@ -15,6 +15,10 @@ nav.navbar.navbar-default.navbar-fixed-top.navbar-parallax style="border: none"
 				li
 					a style="color: white" href="#activities" WHAT IS KONNEC?
 				li
+					a style="color: white" href="#schedule" SCHEDULE
+				li
+					a style="color: white" href="#sponsors" SPONSORS
+				li
 					a style="color: white" href="#location" LOCATION
 				li
 					a style="color: white" href="#register" REGISTER
@@ -25,10 +29,7 @@ section#hero style="height: 100%; background-color: black;"
 		.caption
 			.typewriter.border style="margin-bottom: 30px;"
 				h1 KONNEC #8
-				div style="color: white; font-weight: bold; margin-top: 10px;" 10 Febuary 2017 @ KU
-			br
-			/ .border	style="display: inline-block; color:white;"
-			/ 	| 10 Febuary 2017
+				div style="color: white; font-weight: bold; margin-top: 10px;" 10 Febuary 2018 @ KU
 			br
 			a.regis-btn.-white-border.-no-bg href="#register" style="color: white; margin-top: 30px;"
 				| JOIN US
@@ -49,16 +50,63 @@ section#activities style="background-color: #383838;" data-bottom-top="backgroun
 	#police-tape style="position: absolute; right: -30px; bottom: -40px; z-index: 0;" data-bottom-top="opacity: 0;transform: scale(3);" data-center-top="opacity: 1;transform: scale(1.5);" data-anchor-target="#activities .topic"
 		= image_tag 'objects/police_tape.png'
 
-/ .landing#hero style="height: 100vh;"
-/ 	.container
-/ 		.row style="margin-bottom: 20px;"
-/ 			.col-md-3
-/ 				.topic SPONSOR
+section#schedule
+	.landing
+		.container
+			.topic.-black SCHEDULE
+			.row
+				.col-md-offset-3.col-md-6
+					table.table.schedule-table
+						tbody
+							tr
+								td.schedule-cell.align-right 
+									| 08:30
+								td.schedule-cell ลงทะเบียน ที่ ใต้ตึกคอม รวมตัวที่ลานกิจ
+							tr
+								td.schedule-cell.align-right
+									| 09:00
+								td.schedule-cell พิธีเปิด
+							tr
+								td.schedule-cell.align-right 
+									| 09:30
+								td.schedule-cell กิจกรรมยามเช้า
+							tr
+								td.schedule-cell.align-right
+									| 12:00
+								td.schedule-cell รับประทานอาหารกลางวัน
+							tr
+								td.schedule-cell.align-right
+									| 13:00
+								td.schedule-cell กิจกรรมภาคบ่าย
+							tr
+								td.schedule-cell.align-right
+									| 16:30
+								td.schedule-cell ประกาศรางวัลกิจกรรมภาคบ่าน และ เปิดโหวต cuteboy & cutegirl
+							tr
+								td.schedule-cell.align-right
+									| 17:30
+								td.schedule-cell After Party
+							tr
+								td.schedule-cell.align-right
+									| 20:00
+								td.schedule-cell จบงาน KonneC #8
+
+section#sponsors style="background-image: url(#{image_path 'wood.jpg'});"
+	.landing 
+		.container
+			.topic SPONSORS
+			.row
+				.col-xs-6
+					= image_tag 'sponsors/sellsuki.png', style: "width: 100%;"
+				.col-xs-6
+					= image_tag 'sponsors/wongnai.jpg', style: "width: 100%;"
+				
+
 
 section#location
 	.landing style="background-color: #920A0A; background-image: url(#{image_path 'ku-building.jpg'});" data-bottom-top="background-color:rgb(0,0,0)" data-center-top=" background-color: rgb(146,10,10)" data-anchor-target="#location .landing"
 		.container style="height: 100%;"
-			.topic style="background-color: #920A0A;" data-bottom-top="opacity: 0;background-color:rgb(0,0,0);" data-center-top="opacity: 1;background-color: rgb(146,10,10);" data-anchor-target="#location .topic"
+			.topic style="background-color: #920A0A;" data-bottom-top="opacity: 0;background-color:rgb(0,0,0);" data-center-top="opacity: 1;background-color: rgb(146,10,10); padding: 0 20px;" data-anchor-target="#location .topic"
 				| LOCATION
 			.row 
 				.col-md-6#map-info style="margin-bottom: 30px;" data-bottom-top="opacity: 0; transform:scale(0.5);" data-center-top="opacity: 1; transform:scale(1);"data-anchor-target="#location .topic" data-smooth-scrolling="on"
