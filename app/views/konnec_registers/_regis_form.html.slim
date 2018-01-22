@@ -20,28 +20,28 @@
   .form-group
     = f.label :first_name, :class => "col-sm-3 col-xs-4 regis-label" 
     .col-sm-9.col-xs-8
-      = f.text_field :first_name, :class => "form-control", :placeholder => 'ชื่อจริง'
+      = f.text_field :first_name, :class => "form-control"
   .form-group
     = f.label :last_name, :class => "col-sm-3 col-xs-4 regis-label" 
     .col-sm-9.col-xs-8
-      = f.text_field :last_name, :class => "form-control" , :placeholder => 'นามสกุล'
+      = f.text_field :last_name, :class => "form-control"
   .form-group
     = f.label :nickname, :class => "col-sm-3 col-xs-4 regis-label" 
     .col-sm-9.col-xs-8
-      = f.text_field :nickname, :class => "form-control", :placeholder => 'ชื่อเล่น'
+      = f.text_field :nickname, :class => "form-control"
   .form-group
     = f.label :gender, :class => "col-sm-3 col-xs-4 regis-label" 
     .col-sm-9.col-xs-8
       = f.radio_button :gender, 'Male', :checked => true
-      = f.label :gender, 'Male', style: "margin-right: 10px;"
+      = f.label :gender, 'ชาย', style: "margin-right: 10px;"
       = f.radio_button :gender, 'Female'
-      = f.label :gender, 'Female', style: "margin-right: 10px;"
+      = f.label :gender, 'หญิง', style: "margin-right: 10px;"
       = f.radio_button :gender, 'Others'
-      = f.label :gender, 'Others', style: "margin-right: 10px;"
+      = f.label :gender, 'อื่นๆ', style: "margin-right: 10px;"
   .form-group
     = f.label :allergy, :class => "col-sm-3 col-xs-4 regis-label" 
     .col-sm-9.col-xs-8
-      = f.text_field :allergy, :class => "form-control", :placeholder => 'อาหารที่แพ้'
+      = f.text_field :allergy, :class => "form-control"
   .form-group
     = f.label :size, :class => "col-sm-3 col-xs-4 regis-label" 
     .col-sm-9.col-xs-8
