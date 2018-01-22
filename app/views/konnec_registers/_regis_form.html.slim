@@ -30,6 +30,15 @@
     .col-sm-9.col-xs-8
       = f.text_field :nickname, :class => "form-control", :placeholder => 'ชื่อเล่น'
   .form-group
+    = f.label :gender, :class => "col-sm-3 col-xs-4 regis-label" 
+    .col-sm-9.col-xs-8
+      = radio_button_tag(:gender, 0)
+      = label :gender_0, 'Male', style: "margin-right: 10px;"
+      = radio_button_tag(:gender, 1)
+      = label :gender_1, 'Female', style: "margin-right: 10px;"
+      = radio_button_tag(:gender, 2)
+      = label :gender_2, 'Others', style: "margin-right: 10px;"
+  .form-group
     = f.label :allergy, :class => "col-sm-3 col-xs-4 regis-label" 
     .col-sm-9.col-xs-8
       = f.text_field :allergy, :class => "form-control", :placeholder => 'อาหารที่แพ้'

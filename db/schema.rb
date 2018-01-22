@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180118135248) do
+ActiveRecord::Schema.define(version: 20180122155042) do
 
   create_table "konnec_registers", force: :cascade do |t|
     t.integer  "university", limit: 4
@@ -19,10 +19,11 @@ ActiveRecord::Schema.define(version: 20180118135248) do
     t.string   "first_name", limit: 255
     t.string   "last_name",  limit: 255
     t.string   "nickname",   limit: 255
+    t.integer  "gender",     limit: 4,     default: 0
     t.text     "allergy",    limit: 65535
     t.integer  "size",       limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
 end
