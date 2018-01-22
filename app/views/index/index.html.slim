@@ -101,7 +101,7 @@ section#schedule
 	div style="position: absolute; bottom: 0; left: 0; z-index: 0; width: 50%; text-align: left;" data-aos="fade" data-aos-duration="600"
 		= image_tag 'objects/blood.jpg'
 
-section#sponsors style="background-image: url(#{image_path 'wood.jpeg'});"
+section#sponsors style="background-image: url(#{image_path 'wood.jpg'});"
 	.landing style="padding-bottom: 0;"
 		.container
 			.topic SPONSORS
@@ -172,18 +172,50 @@ javascript:
         		$('.navbar a').css('color','#FFF')
         	}
         },
-        forceHeight: false
+        forceHeight: false,
+    	mobileCheck: function(){
+	        if((/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+	            //alert('mobile');
+	            // setScrollTop(0);
+	            //Where should I set setScrollTop(0); ???
+	        }
+    	}
 	});
 
 	skrollr.menu.init(s, {
+		//skrollr will smoothly animate to the new position using `animateTo`.
 		animate: true,
+
+		//The easing function to use.
 		easing: 'sqrt',
+
+		//Multiply your data-[offset] values so they match those set in skrollr.init
 		scale: 2,
+
+		//How long the animation should take in ms.
 		duration: function(currentTop, targetTop) {
+			//By default, the duration is hardcoded at 500ms.
 			return 500;
+
+			//But you could calculate a value based on the current scroll position (`currentTop`) and the target scroll position (`targetTop`).
+			//return Math.abs(currentTop - targetTop) * 10;
 		},
+
+		//By default skrollr-menu will only react to links whose href attribute contains a hash and nothing more, e.g. `href="#foo"`.
+		//If you enable `complexLinks`, skrollr-menu also reacts to absolute and relative URLs which have a hash part.
+		//The following will all work (if the user is on the correct page):
+		//http://example.com/currentPage/#foo
+		//http://example.com/currentDir/currentPage.html?foo=bar#foo
+		///?foo=bar#foo
 		complexLinks: true,
-		updateUrl: false
+
+		//This event is triggered right before we jump/animate to a new hash.
+		change: function(newHash, newTopPosition) {
+			//Do stuff
+		},
+
+		//Add hash link (e.g. `#foo`) to URL or not.
+		updateUrl: false //defaults to `true`.
 	});
 
 	function initMap() {
