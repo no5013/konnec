@@ -13,15 +13,15 @@ nav.navbar.navbar-default.navbar-fixed-top.navbar-parallax style="border: none"
 		.collapse.navbar-collapse#myNavbar style="overflow: hidden;"
 			ul.nav.navbar-nav.navbar-right
 				li
-					a style="color: white" href="#activities" WHAT IS KONNEC?
+					a style="color: white" href="#activities" onclick="ga('send', 'event', 'nav', 'activities', this.href);" WHAT IS KONNEC?
 				li
-					a style="color: white" href="#schedule" SCHEDULE
+					a style="color: white" href="#schedule" onclick="ga('send', 'event', 'nav', 'schedule', this.href);" SCHEDULE
 				li
-					a style="color: white" href="#sponsors" SPONSORS
+					a style="color: white" href="#sponsors" onclick="ga('send', 'event', 'nav', 'sponsors', this.href);" SPONSORS
 				li
-					a style="color: white" href="#location" LOCATION
+					a style="color: white" href="#location" onclick="ga('send', 'event', 'nav', 'location', this.href);" LOCATION
 				li
-					a style="color: white" href="#register" REGISTER
+					a style="color: white" href="#register" onclick="ga('send', 'event', 'nav', 'register', this.href);" REGISTER
 
 
 section#hero style="height: 100%; background-color: #383838;"
@@ -31,7 +31,7 @@ section#hero style="height: 100%; background-color: #383838;"
 				h1 KONNEC #8
 				div style="color: white; font-weight: bold; margin-top: 10px;" 10 Febuary 2018 @ KU
 			br
-			a.regis-btn.-white-border.-no-bg href="#register" style="color: white; margin-top: 30px;"
+			a.regis-btn.-white-border.-no-bg href="#register" style="color: white; margin-top: 30px;" onclick="ga('send', 'event', 'join', 'hero', this.href);"
 				| JOIN US
 
 section#activities style="background-color: #383838;"
@@ -45,7 +45,7 @@ section#activities style="background-color: #383838;"
 						| KonneC (Connections of CU and KU Computer Engineering Students) เป็นโครงการสานสัมพันธ์ของนิสิตวิศวกรรมคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย – มหาวิทยาลัยเกษตรศาสตร์ ที่เปิดโอกาสให้นิสิตของทั้งสองมหาวิทยาลัยได้มาทำความรู้จักกัน ผ่านการทำกิจกรรมและการแข่งขันกีฬาร่วมกัน KonneC (เมื่อมหาวิทยาลัยเกษตรศาสตร์เป็นเจ้าภาพ) หรือ ConneK (เมื่อจุฬาลงกรณ์มหาวิทยาลัยเป็นเจ้าภาพ) จัดขึ้นครั้งแรกเมื่อปี พ.ศ.2553 โดยในครั้งแรก จุฬาลงกรณ์มหาวิทยาลัย เป็นเจ้าภาพจัดโครงการ ตั้งแต่ครั้งนั้น ทั้งสอง มหาวิทยาลัยก็สลับกันเป็นเจ้าภาพมาโดยตลอด
 
 					.seperator style="border-color: white;"
-					a.regis-btn.-btn-grey.-white-border href="#register" style="color: white" 
+					a.regis-btn.-btn-grey.-white-border href="#register" style="color: white" onclick="ga('send', 'event', 'join', 'activities', this.href);"
 						| JOIN US
 	#police-tape style="position: absolute; right: -30px; bottom: -40px; z-index: 0;" data-anchor-target="#activities .topic" data-aos="zoom-out" 
 		= image_tag 'objects/police_tape.png'
@@ -53,7 +53,7 @@ section#activities style="background-color: #383838;"
 section#schedule
 	.landing
 		.container
-			.topic.-black data-aos="slide-right" SCHEDULE 
+			.topic.-black data-aos="fade-right" SCHEDULE 
 			.row
 				.col-md-offset-3.col-md-6
 					table.table.schedule-table
@@ -134,7 +134,7 @@ section#location
 section#register
 	.landing 
 		.container
-			.topic style="color: #383838" data-aos="fade-right" REGISTER
+			.topic style="color: #383838" data-aos="flip-right" REGISTER
 			.row data-aos="fade"
 				.col-md-6.col-md-offset-3
 					= render 'konnec_registers/regis_form'
