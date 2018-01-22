@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require skrollr
 //= require skrollr.menu
+//= require aos
 //= require bootstrap-sprockets
 //= require_tree .

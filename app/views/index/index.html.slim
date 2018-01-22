@@ -25,7 +25,7 @@ nav.navbar.navbar-default.navbar-fixed-top.navbar-parallax style="border: none"
 
 
 section#hero style="height: 100%; background-color: black;"
-	.landing data-center-top="background-position: 50% 0px;" data-top-bottom="background-position: 50% -50%;" data-anchor-target="#hero" style="height: 100%; background-image: url(#{image_path 'crime_scene.jpg'});"
+	.landing style="height: 100%; background-image: url(#{image_path 'crime_scene.jpg'});" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% 25%;" data-anchor-target="section#hero .landing"
 		.caption
 			.typewriter.border style="margin-bottom: 30px;"
 				h1 KONNEC #8
@@ -34,12 +34,12 @@ section#hero style="height: 100%; background-color: black;"
 			a.regis-btn.-white-border.-no-bg href="#register" style="color: white; margin-top: 30px;"
 				| JOIN US
 
-section#activities style="background-color: #383838;" data-bottom-top="background-color:rgb(0,0,0)" data-center-top=" background-color: rgb(52,52,52)" data-anchor-target="#activities"
+section#activities style="background-color: #383838;"
 	.landing
 		.container
-			.topic data-bottom-top="opacity: 0;top: 50px;" data-center-top="opacity: 1;top: 0px;" data-anchor-target="#activities .topic"
+			.topic data-aos="fade-up" 
 				| What is KonneC?
-			.row style="position: relative" data-bottom-top="opacity: 0;top: 50px;" data-center-top="opacity: 1;top: 0px;" data-anchor-target="#activities .row"
+			.row style="position: relative" data-aos="fade-up" 
 				.col-md-7 
 					div style="color: white; font-weight: bold;" 
 						| KonneC (Connections of CU and KU Computer Engineering Students) เป็นโครงการสานสัมพันธ์ของนิสิตวิศวกรรมคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย – มหาวิทยาลัยเกษตรศาสตร์ ที่เปิดโอกาสให้นิสิตของทั้งสองมหาวิทยาลัยได้มาทำความรู้จักกัน ผ่านการทำกิจกรรมและการแข่งขันกีฬาร่วมกัน KonneC (เมื่อมหาวิทยาลัยเกษตรศาสตร์เป็นเจ้าภาพ) หรือ ConneK (เมื่อจุฬาลงกรณ์มหาวิทยาลัยเป็นเจ้าภาพ) จัดขึ้นครั้งแรกเมื่อปี พ.ศ.2553 โดยในครั้งแรก จุฬาลงกรณ์มหาวิทยาลัย เป็นเจ้าภาพจัดโครงการ ตั้งแต่ครั้งนั้น ทั้งสอง มหาวิทยาลัยก็สลับกันเป็นเจ้าภาพมาโดยตลอด
@@ -47,7 +47,7 @@ section#activities style="background-color: #383838;" data-bottom-top="backgroun
 					.seperator style="border-color: white;"
 					a.regis-btn.-btn-grey.-white-border href="#register" style="color: white" 
 						| JOIN US
-	#police-tape style="position: absolute; right: -30px; bottom: -40px; z-index: 0;" data-bottom-top="opacity: 0;transform: scale(3);" data-center-top="opacity: 1;transform: scale(1.5);" data-anchor-target="#activities .topic"
+	#police-tape style="position: absolute; right: -30px; bottom: -40px; z-index: 0;" data-anchor-target="#activities .topic" data-aos="zoom-out" 
 		= image_tag 'objects/police_tape.png'
 
 section#schedule
@@ -59,37 +59,45 @@ section#schedule
 					table.table.schedule-table
 						tbody
 							tr
-								td.schedule-cell.align-right 
+								td.schedule-cell.align-right data-aos="fade-right" data-aos-once="true"
 									| 08:30
-								td.schedule-cell ลงทะเบียน ที่ ใต้ตึกคอม รวมตัวที่ลานกิจ
+								td.schedule-cell.align-left data-aos="fade-left" data-aos-once="true"
+									| ลงทะเบียน ที่ ใต้ตึกคอม รวมตัวที่ลานกิจ
 							tr
-								td.schedule-cell.align-right
+								td.schedule-cell.align-right data-aos="fade-right" data-aos-once="true"
 									| 09:00
-								td.schedule-cell พิธีเปิด
+								td.schedule-cell.align-left data-aos="fade-left" data-aos-once="true"
+									| พิธีเปิด
 							tr
-								td.schedule-cell.align-right 
+								td.schedule-cell.align-right data-aos="fade-right" data-aos-once="true"
 									| 09:30
-								td.schedule-cell กิจกรรมยามเช้า
+								td.schedule-cell.align-left data-aos="fade-left" data-aos-once="true"
+									| กิจกรรมยามเช้า
 							tr
-								td.schedule-cell.align-right
+								td.schedule-cell.align-right data-aos="fade-right" data-aos-once="true"
 									| 12:00
-								td.schedule-cell รับประทานอาหารกลางวัน
+								td.schedule-cell.align-left data-aos="fade-left" data-aos-once="true"
+									| รับประทานอาหารกลางวัน
 							tr
-								td.schedule-cell.align-right
+								td.schedule-cell.align-right data-aos="fade-right" data-aos-once="true"
 									| 13:00
-								td.schedule-cell กิจกรรมภาคบ่าย
+								td.schedule-cell.align-left data-aos="fade-left" data-aos-once="true"
+									| กิจกรรมภาคบ่าย
 							tr
-								td.schedule-cell.align-right
+								td.schedule-cell.align-right data-aos="fade-right" data-aos-once="true"
 									| 16:30
-								td.schedule-cell ประกาศรางวัลกิจกรรมภาคบ่าน และ เปิดโหวต cuteboy & cutegirl
+								td.schedule-cell.align-left data-aos="fade-left" data-aos-once="true"
+									| ประกาศรางวัลกิจกรรมภาคบ่าน และ เปิดโหวต cuteboy & cutegirl
 							tr
-								td.schedule-cell.align-right
+								td.schedule-cell.align-right data-aos="fade-right" data-aos-once="true"
 									| 17:30
-								td.schedule-cell After Party
+								td.schedule-cell.align-left data-aos="fade-left" data-aos-once="true"
+									| After Party
 							tr
-								td.schedule-cell.align-right
+								td.schedule-cell.align-right data-aos="fade-right" data-aos-once="true"
 									| 20:00
-								td.schedule-cell จบงาน KonneC #8
+								td.schedule-cell.align-left data-aos="fade-left" data-aos-once="true"
+									| จบงาน KonneC #8
 
 section#sponsors style="background-image: url(#{image_path 'wood.jpg'});"
 	.landing 
@@ -104,15 +112,15 @@ section#sponsors style="background-image: url(#{image_path 'wood.jpg'});"
 
 
 section#location
-	.landing style="background-color: #920A0A; background-image: url(#{image_path 'ku-building.jpg'});" data-bottom-top="background-color:rgb(0,0,0)" data-center-top=" background-color: rgb(146,10,10)" data-anchor-target="#location .landing"
-		.container style="height: 100%;"
-			.topic style="background-color: #920A0A;" data-bottom-top="opacity: 0;background-color:rgb(0,0,0);" data-center-top="opacity: 1;background-color: rgb(146,10,10); padding: 0 20px;" data-anchor-target="#location .topic"
+	.landing style="background-color: #920A0A; background-image: url(#{image_path 'ku-building.jpg'});"
+		.container style="height: 100%;" data-aos="fade" 
+			.topic style="background-color: #920A0A; padding: 0 20px" data-aos="fade"
 				| LOCATION
 			.row 
-				.col-md-6#map-info style="margin-bottom: 30px;" data-bottom-top="opacity: 0; transform:scale(0.5);" data-center-top="opacity: 1; transform:scale(1);"data-anchor-target="#location .topic" data-smooth-scrolling="on"
-					#map style="height: 300px; width: 100%;"
-				.col-md-6#location-info style="overflow-x: hidden"
-					.content style="color: white; font-size: 24px; position: relative;" data-bottom-top="opacity: 0;left:100px;background-color:rgb(0,0,0);" data-center-top="opacity: 1; left:0px;background-color:rgb(146,10,10);" data-anchor-target="#location .topic"
+				.col-md-6#map-info style="margin-bottom: 30px;"
+					#map style="height: 300px; width: 100%;" data-aos="zoom-in" 
+				.col-md-6#location-info style="overflow-x: hidden" 
+					.content style="color: white; font-size: 24px; position: relative;" data-aos="fade-left" 
 						| ภาควิชาวิศวกรรมคอมพิวเตอร์ (อาคาร15)
 						br 
 						| คณะวิศวกรรมศาสตร์ 
@@ -122,10 +130,10 @@ section#location
 						| เขตบางเขน
 
 section#register
-	.landing
+	.landing 
 		.container
-			.topic style="color: #383838" data-bottom-top="opacity: 0;left:-100px;" data-center-top="opacity: 1;left: 0;"  data-anchor-target="#register .topic" REGISTER
-			.row data-bottom-top="opacity: 0;top:-100px;" data-center-top="opacity: 1;top: 0;" data-anchor-target="#register .row"
+			.topic style="color: #383838" data-aos="fade-right" REGISTER
+			.row data-aos="fade"
 				.col-md-6.col-md-offset-3
 					= render 'konnec_registers/regis_form'
 					.success-regis style="display: none"
@@ -141,6 +149,8 @@ section#register
 / 		span ConneK
 
 javascript:
+	var a = AOS.init()
+
 	var s = skrollr.init({
         beforerender: function(scrolling){
 	        if($('#activities').position().top <= scrolling.curTop + $('nav').height() && $('#activities').position().top + $('#activities').height() >= scrolling.curTop){
