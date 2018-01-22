@@ -73,6 +73,6 @@ class KonnecRegistersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def konnec_register_params
-      params.require(:konnec_register).permit(:university, :year, :first_name, :last_name, :nickname, :allergy, :size)
+      params.require(:konnec_register).permit(:university, :year, :first_name, :last_name, :nickname, :gender, :allergy, :size)
     end
 end
