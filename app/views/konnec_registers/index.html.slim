@@ -1,7 +1,7 @@
 script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"
 
 .container
-  h1 style="display: inline-block;" KonneC Registers
+  h1 style="display: inline-block;" KonneC Registers 
 
   .dropdown style="float: right; margin-top: 30px; margin-right: 5px;"
     button#dropdownMenu1.btn.btn-warning.dropdown-toggle aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" type="button" 
@@ -35,7 +35,7 @@ script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"
     .row style="padding: 0 10px"
       .text-center
         thread
-          tr
+          tr.active
             th Participators
         table.table
           tbody
@@ -58,9 +58,9 @@ script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"
           tbody
             - years = Array.new
             - @years.each do |year| 
-              - years << [year.year, year.total_count]
+              - years << ["ปี #{year.year}", year.total_count]
               tr
-                td = year.year
+                td = "ปี #{year.year}"
                 td = year.total_count
   .col-xs-4.text-center
     .row
@@ -79,6 +79,13 @@ script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"
                 td = size.size
                 td = size.total_count
 
+.container
+  .alert.alert-success style="text-align: center;"
+    h1
+      span.glyphicon.glyphicon-user style="margin-right: 10px;"
+      = "ลงทะเบียนแล้ว #{@konnec_registers.total_count} คน" 
+
+.container
   table.table
     thead
       tr
