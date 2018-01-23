@@ -17,10 +17,10 @@ class KonnecRegistersController < ApplicationController
 
     respond_to do |format|
       format.html {
-        @universities = @konnec_registers.select('university, count(*) as total_count').group(:university)
-        @genders = @konnec_registers.select('gender, count(*) as total_count').group(:gender)
-        @years = @konnec_registers.select('year, count(*) as total_count').group(:year)
-        @sizes = @konnec_registers.select('size, count(*) as total_count').group(:size)
+        @universities = @konnec_registers.select('university, count(*) as total_count').group(:university).order(university: :asc)
+        @genders = @konnec_registers.select('gender, count(*) as total_count').group(:gender).order(gender: :asc)
+        @years = @konnec_registers.select('year, count(*) as total_count').group(:year).order(year: :asc)
+        @sizes = @konnec_registers.select('size, count(*) as total_count').group(:size).order(size: :asc)
 
         @konnec_registers = @konnec_registers.order(created_at: :desc).page(params[:page]).per(10)
       }
