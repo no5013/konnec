@@ -1,18 +1,31 @@
 .container
 
   h1 style="display: inline-block;" KonneC Registers
-  .btn-group style="float: right; margin-top: 30px; color: white;"
-    = link_to 'Download CSV', download_csv_path, class: "btn btn-warning", style: "color: white;"
-    button.btn.btn-warning.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" 
+
+  .dropdown style="float: right; margin-top: 30px; margin-right: 5px;"
+    button#dropdownMenu1.btn.btn-warning.dropdown-toggle aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" type="button" 
+      | Download CSV
       span.caret
-      span.sr-only Toggle Dropdown
-    ul.dropdown-menu
+    ul.dropdown-menu aria-labelledby="dropdownMenu1" 
+      li
+        a href=download_csv_path CSV All
       li
         a href=download_csv_path(:university => "ku") Kasetsart CSV
       li
         a href=download_csv_path(:university => "cu") Chulalongkorn CSV
-  
-  = link_to 'Register', new_konnec_register_path, class: "btn btn-primary", style: "float: right; margin-top: 30px; margin-right: 5px; color: white;"
+
+
+  .dropdown style="float: right; margin-top: 30px; margin-right: 5px;"
+    button#dropdownMenu1.btn.btn-primary.dropdown-toggle aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" type="button" 
+      | Filter
+      span.caret
+    ul.dropdown-menu aria-labelledby="dropdownMenu1" 
+      li
+        a href=konnec_registers_path Show All
+      li
+        a href=konnec_registers_path(:university => "ku") Show Kasetsart
+      li
+        a href=konnec_registers_path(:university => "cu") Show Chulalongkorn
 
   table.table
     thead
@@ -43,6 +56,8 @@
           td = link_to 'Show', konnec_register
           td = link_to 'Edit', edit_konnec_register_path(konnec_register)
           td = link_to 'Destroy', konnec_register, data: { confirm: 'Are you sure?' }, method: :delete
+
+  / = link_to 'Register', new_konnec_register_path, class: "btn btn-primary", style: "float: right; color: white;"
 
   br
 
