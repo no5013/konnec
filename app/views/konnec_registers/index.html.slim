@@ -1,7 +1,18 @@
 .container
-  h1 style="display: inline-block;" KonneC Registers
 
-  = link_to 'New Konnec register', new_konnec_register_path, class: "btn btn-default", style: "float: right; margin-top: 30px;"
+  h1 style="display: inline-block;" KonneC Registers
+  .btn-group style="float: right; margin-top: 30px; color: white;"
+    = link_to 'Download CSV', download_csv_path, class: "btn btn-warning", style: "color: white;"
+    button.btn.btn-warning.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" 
+      span.caret
+      span.sr-only Toggle Dropdown
+    ul.dropdown-menu
+      li
+        a href=download_csv_path(:university => "ku") Kasetsart CSV
+      li
+        a href=download_csv_path(:university => "cu") Chulalongkorn CSV
+  
+  = link_to 'Register', new_konnec_register_path, class: "btn btn-primary", style: "float: right; margin-top: 30px; margin-right: 5px; color: white;"
 
   table.table
     thead

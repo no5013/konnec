@@ -58,4 +58,7 @@ Rails.application.routes.draw do
 
   root 'index#index'
   resources :konnec_registers
+  
+  get '/konnec_registers.csv' => 'konnec_registers#index', format: 'csv', as: :download_csv
+
 end

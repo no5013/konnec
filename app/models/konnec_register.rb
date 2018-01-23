@@ -6,4 +6,16 @@ class KonnecRegister < ActiveRecord::Base
 	validates :first_name, presence: true
 	validates :last_name, presence: true
 	validates :nickname, presence: true
+
+  	def self.to_csv
+		attributes = %w{university year first_name last_name nickname gender allergy size}
+
+		CSV.generate(headers: true) do |csv|
+			csv << attributes
+
+			all.each do |konnec_register|
+				csv << attributes.map{ |attr| konnec_register.send(attr) }
+			end
+		end
+	end
 end

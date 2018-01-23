@@ -5,7 +5,7 @@ class KonnecRegistersController < ApplicationController
 
   # GET /konnec_registers
   # GET /konnec_registers.json
-  def index()
+  def index
     university = params[:university]
     if university.present? and university.casecmp("ku") == 0
       @konnec_registers = KonnecRegister.where(university: 0)
@@ -15,7 +15,12 @@ class KonnecRegistersController < ApplicationController
       @konnec_registers = KonnecRegister.order(created_at: :desc)
     end
 
-    @konnec_registers = @konnec_registers.page(params[:page]).per(10)
+    respond_to do |format|
+      format.html {
+        @konnec_registers = @konnec_registers.page(params[:page]).per(10)
+      }
+      format.csv { send_data @konnec_registers.to_csv, filename: "konnec_registers#{ "-#{university}" if university.present? }-#{Date.today}.csv" }
+    end
   end
 
   # GET /konnec_registers/1
