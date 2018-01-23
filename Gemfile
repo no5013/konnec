@@ -42,6 +42,8 @@ gem 'sass-rails', '>= 3.2'
 
 gem 'puma'
 
+gem 'kaminari'
+
 group :development do
   gem 'mysql2', '0.3.18'
   gem 'capistrano'
