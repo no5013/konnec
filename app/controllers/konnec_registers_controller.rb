@@ -12,7 +12,7 @@ class KonnecRegistersController < ApplicationController
     elsif university.present? and university.casecmp("cu") == 0
       @konnec_registers = KonnecRegister.where(university: 1)
     else
-      @konnec_registers = KonnecRegister.order(created_at: :desc)
+      @konnec_registers = KonnecRegister.all
     end
 
     respond_to do |format|
@@ -22,7 +22,7 @@ class KonnecRegistersController < ApplicationController
         @years = @konnec_registers.select('year, count(*) as total_count').group(:year)
         @sizes = @konnec_registers.select('size, count(*) as total_count').group(:size)
 
-        @konnec_registers = @konnec_registers.page(params[:page]).per(10)
+        @konnec_registers = @konnec_registers.order(created_at: :desc).page(params[:page]).per(10)
       }
       format.csv { send_data @konnec_registers.to_csv, filename: "konnec_registers#{ "-#{university}" if university.present? }-#{Date.today}.csv" }
     end
