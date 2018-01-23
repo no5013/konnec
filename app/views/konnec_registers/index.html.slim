@@ -1,5 +1,6 @@
-.container
+script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"
 
+.container
   h1 style="display: inline-block;" KonneC Registers
 
   .dropdown style="float: right; margin-top: 30px; margin-right: 5px;"
@@ -14,7 +15,6 @@
       li
         a href=download_csv_path(:university => "cu") Chulalongkorn CSV
 
-
   .dropdown style="float: right; margin-top: 30px; margin-right: 5px;"
     button#dropdownMenu1.btn.btn-primary.dropdown-toggle aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" type="button" 
       | Filter
@@ -26,6 +26,58 @@
         a href=konnec_registers_path(:university => "ku") Show Kasetsart
       li
         a href=konnec_registers_path(:university => "cu") Show Chulalongkorn
+
+  br
+
+  .col-xs-4.text-center style="padding: 0 10px"
+    .row
+      #chart_div.chart style="display: inline-block"
+    .row style="padding: 0 10px"
+      .text-center
+        thread
+          tr
+            th Participators
+        table.table
+          tbody
+            - universities = Array.new
+            - @universities.each do |u| 
+              - universities << [u.university, u.total_count]
+              tr
+                td = u.university
+                td = u.total_count
+
+  .col-xs-4.text-center style="padding: 0 10px"
+    .row
+      #chart_div1.chart style="display: inline-block"
+    .row style="padding: 0 10px"
+      .text-center
+        thread
+          tr
+            th Years
+        table.table
+          tbody
+            - years = Array.new
+            - @years.each do |year| 
+              - years << [year.year, year.total_count]
+              tr
+                td = year.year
+                td = year.total_count
+  .col-xs-4.text-center
+    .row
+      #chart_div2.chart style="display: inline-block"
+    .row style="padding: 0 10px"
+      .text-center
+        thread
+          tr
+            th Sizes
+        table.table
+          tbody
+            - sizes = Array.new
+            - @sizes.each do |size| 
+              tr
+                - sizes << [size.size, size.total_count]
+                td = size.size
+                td = size.total_count
 
   table.table
     thead
@@ -63,3 +115,59 @@
 
 .text-center
   = paginate @konnec_registers
+
+javascript:
+  // Load the Visualization API and the corechart package.
+  google.charts.load('current', {'packages':['corechart']});
+
+  // Set a callback to run when the Google Visualization API is loaded.
+  google.charts.setOnLoadCallback(drawChart);
+
+  // Callback that creates and populates a data table,
+  // instantiates the pie chart, passes in the data and
+  // draws it.
+  function drawChart() {
+    // Create the data table.
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'University');
+    data.addColumn('number', '#people');
+    data.addRows(#{universities.to_json.html_safe});
+
+    // Set chart options
+    var options = {'title':'Participators',
+                   'width':400,
+                   'height':300};
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+
+    data = new google.visualization.DataTable();
+    data.addColumn('string', 'Year');
+    data.addColumn('number', '#people');
+    data.addRows(#{years.to_json.html_safe});
+
+    // Set chart options
+    options = {'title':'Years',
+                   'width':400,
+                   'height':300};
+
+    // Instantiate and draw our chart, passing in some options.
+    chart = new google.visualization.PieChart(document.getElementById('chart_div1'));
+    chart.draw(data, options);
+
+
+    data = new google.visualization.DataTable();
+    data.addColumn('string', 'Size');
+    data.addColumn('number', '#people');
+    data.addRows(#{sizes.to_json.html_safe});
+
+    // Set chart options
+    options = {'title':'Sizes',
+                   'width':400,
+                   'height':300};
+
+    // Instantiate and draw our chart, passing in some options.
+    chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
+    chart.draw(data, options);
+  }

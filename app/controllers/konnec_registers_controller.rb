@@ -17,6 +17,11 @@ class KonnecRegistersController < ApplicationController
 
     respond_to do |format|
       format.html {
+        @universities = @konnec_registers.select('university, count(*) as total_count').group(:university)
+        @genders = @konnec_registers.select('gender, count(*) as total_count').group(:gender)
+        @years = @konnec_registers.select('year, count(*) as total_count').group(:year)
+        @sizes = @konnec_registers.select('size, count(*) as total_count').group(:size)
+
         @konnec_registers = @konnec_registers.page(params[:page]).per(10)
       }
       format.csv { send_data @konnec_registers.to_csv, filename: "konnec_registers#{ "-#{university}" if university.present? }-#{Date.today}.csv" }
