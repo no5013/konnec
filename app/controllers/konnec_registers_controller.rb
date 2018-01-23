@@ -6,7 +6,14 @@ class KonnecRegistersController < ApplicationController
   # GET /konnec_registers
   # GET /konnec_registers.json
   def index
-    @konnec_registers = KonnecRegister.all
+    university = params[:university]
+    if university.present? and university.casecmp("ku") == 0
+      @konnec_registers = KonnecRegister.where(university: 0)
+    elsif university.present? and university.casecmp("cu") == 0
+      @konnec_registers = KonnecRegister.where(university: 1)
+    else
+      @konnec_registers = KonnecRegister.order(created_at: :desc).all
+    end
   end
 
   # GET /konnec_registers/1

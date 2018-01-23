@@ -1,5 +1,4 @@
 <% if @konnec_register and @konnec_register.errors.any? %>
-	console.log("FUCK")
 	<% @konnec_register.errors.full_messages.each do |message| %>
 		$('form .regis-errors .alert.alert-danger').append('<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span><%= message %></br>')
 		$('form .regis-errors').show()
