@@ -27,6 +27,12 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_preload_app, false
 
+set :lets_encrypt_roles, :lets_encrypt
+set :lets_encrypt_test, true
+set :lets_encrypt_email, 'pongsakorns@gmail.com'
+set :lets_encrypt_domains, 'konnec.xyz www.konnec.xyz'
+
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
