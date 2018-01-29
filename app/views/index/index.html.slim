@@ -106,14 +106,24 @@ section#schedule
 		= image_tag 'objects/blood.jpg'
 
 section#sponsors style="background-image: url(#{image_path 'wood.jpg'});"
-	.landing style="padding-bottom: 0;"
+	.landing
 		.container
 			.topic SPONSORS
 			.row
-				.col-md-6 data-aos="fade-up-left" data-aos-easing="ease-out"
-				    = image_tag 'sponsors/wongnai.png', style: "width: 100%; margin-bottom: -50px;"
-				.col-md-6 data-aos="fade-up" data-aos-easing="ease-out" data-aos-duration="500"
-				    = image_tag 'sponsors/sellsuki.png', style: "width: 100%;"
+				/ .col-md-6 data-aos="fade-up-left" data-aos-easing="ease-out"
+				/     = image_tag 'sponsors/wongnai.png', style: "width: 100%; margin-bottom: -50px;"
+				/ .col-md-6 data-aos="fade-up" data-aos-easing="ease-out" data-aos-duration="500"
+				/     = image_tag 'sponsors/sellsuki.png', style: "width: 100%;"
+				.row style="margin-bottom: 30px;"
+					.col-md-4.col-md-offset-2.col-xs-6 data-aos="fade-right" data-aos-easing="ease-out"
+						= image_tag 'sponsors/sellsuki.svg', style: "background-color: white; width: 100%; border-radius: 15px;"
+					.col-md-4.col-xs-6 data-aos="fade-left" data-aos-easing="ease-out"
+						= image_tag 'sponsors/wongnai.svg', style: "width: 100%; border-radius: 15px"
+				.row style="margin-top: 30px;"
+					.col-md-4.col-md-offset-2.col-xs-6 data-aos="fade-right" data-aos-easing="ease-out"
+						= image_tag 'sponsors/pantip.svg', style: "width: 100%; border-radius: 15px;"
+					.col-md-4.col-xs-6 data-aos="fade-left" data-aos-easing="ease-out"
+						= image_tag 'sponsors/getlink.png', style: "background-color: white; width: 100%; border-radius: 15px;"
 					
 				
 
