@@ -242,3 +242,9 @@ javascript:
 			$('.navbar-toggle').click()
 		}
 	});
+
+	$( "#new_konnec_register" ).submit(function( event ) {
+	  $('#new_konnec_register .regis-btn').hide()
+	  $('#new_konnec_register #loading').show()
+	  event.preventDefault();
+	});

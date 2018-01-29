@@ -49,4 +49,6 @@
 
   .seperator
 
-  .actions style="text-align: center;" = f.submit 'Submit', :class => "regis-btn -btn-grey"
+  .actions style="text-align: center;" 
+    = f.submit 'Submit', :class => "regis-btn -btn-grey"
+    = image_tag 'loading.gif', style: "width: 32px; display:none;", id: "loading"
