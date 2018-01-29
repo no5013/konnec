@@ -24,16 +24,19 @@ nav.navbar.navbar-default.navbar-fixed-top.navbar-parallax style="border: none"
 					a style="color: white" href="#register" onclick="ga('send', 'event', 'nav', 'register', this.href);" REGISTER
 
 
-section#hero style="height: 100%; background-color: #383838;"
-	.landing style="height: 100%; background-image: url(#{image_path 'www.jpg'});" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% 25%;" data-anchor-target="section#hero .landing"
+section#hero style="height: 100%; background-color: #383838; background-image: url(#{image_path 'www.jpg'});" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% 100px;" data-anchor-target="section#hero .caption"
+	.curtain style="position: absolute;width: 100%;height: 100%;background-color: black;opacity: 0.7;"
+	.landing style="height: 100%;"
 		.caption
-			.typewriter.border style="margin-bottom: 30px;"
-				h1 KONNEC #8
-				div style="color: white; font-weight: bold; margin-top: 10px;" 10 February 2018 @ KU
+			= image_tag 'logos/konnec-trans-2.png', style: "width: 400px;" 
+			br
+			.typewriter
+				h4 style="color: white; font-weight: bold; margin-top: 10px;" 10 February 2018 @ KU
 			br
 			a.regis-btn.-white-border.-no-bg href="#register" style="color: white; margin-top: 30px;" onclick="ga('send', 'event', 'join', 'hero', this.href);"
 				| JOIN US
-		.fuck
+	.
+
 
 section#activities style="background-color: #383838;"
 	.landing
