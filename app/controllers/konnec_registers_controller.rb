@@ -6,13 +6,21 @@ class KonnecRegistersController < ApplicationController
   # GET /konnec_registers
   # GET /konnec_registers.json
   def index
+
+    @konnec_registers = KonnecRegister.all
+
+    first_name = params[:first_name]
+    if first_name.present?
+      @konnec_registers = @konnec_registers.where("first_name like ?", "%#{first_name}%")
+    end
+
     university = params[:university]
     if university.present? and university.casecmp("ku") == 0
-      @konnec_registers = KonnecRegister.where(university: 0)
+      @konnec_registers = @konnec_registers.where(university: 0)
     elsif university.present? and university.casecmp("cu") == 0
-      @konnec_registers = KonnecRegister.where(university: 1)
+      @konnec_registers = @konnec_registers.where(university: 1)
     else
-      @konnec_registers = KonnecRegister.all
+      @konnec_registers = @konnec_registers.all
     end
 
     respond_to do |format|
